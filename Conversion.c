@@ -13,7 +13,6 @@ int main(int argc, char const *argv[])
   fp1 = fopen("data_x.txt","r");
   fp2 = fopen("data_y.txt","r");
   fp3 = fopen("data_z.txt","r");
-  output = fopen("Acc_output.txt","w+");
 
   if(fp1 == NULL || fp2 == NULL || fp3 == NULL){
     printf("File Not Found\n");
@@ -41,14 +40,13 @@ int main(int argc, char const *argv[])
       AccYangle += (double)90;
     }
 
-    fprintf(output,"%lf \t %lf\n",AccXangle,AccYangle);
-    //printf("%lf\t%lf\n",AccXangle,AccYangle);
+    //fprintf(output,"%lf \t %lf\n",AccXangle,AccYangle);
+    printf("%lf\t%lf\n",AccXangle,AccYangle);
   }
 
   fclose(fp1);
   fclose(fp2);
   fclose(fp3);
-  fclose(output);
 
   return 0;
 }
